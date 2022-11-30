@@ -1,2 +1,2 @@
 #!bin/bash
-find . -name "*.sh" | sort -r | cut -d "/" -f2 | sed 's/.sh//g'
+find . -name "*.sh" | sort -r | rev | cut -d "/" -f1 | rev | sed 's/.sh//g'
