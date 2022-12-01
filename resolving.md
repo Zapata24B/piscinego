@@ -18,7 +18,8 @@ grep "CLUE" crimescene
 +   The murder have a membership cards for AAA
 +   The barista saw Annabel (a blond spiky hair at New Zealand)
 
----
+
+-
 
 ##  STEP : 2
 > Investigating about who is Annabel
@@ -90,7 +91,8 @@ However, she reports seeing the car that fled the scene.  Describes it as a **bl
 +   Annabel Sun did not see anyone
 +   Annabel see a blue honda with license plate starts with "L337" and ends with "9"
 
----
+
+-
 
 ##  STEP 3 :
 > Investing about the car annabel saw
@@ -109,37 +111,35 @@ Color: **Blue**
 Owner: Erika Owens
 Height: 6'5"
 Weight: 220 lbs
---
---
+
 License Plate **L337**539
 Make: **Honda**
 Color: **Blue**
 Owner: Aron Pilhofer
 Height: 5'3"
 Weight: 198 lbs
---
---
+
 License Plate **L337**369
 Make: **Honda**
 Color: **Blue**
 Owner: Heather Billings
 Height: 5'2"
 Weight: 244 lbs
---
+
 License Plate **L337**DV9
 Make: **Honda**
 Color: **Blue**
 Owner: Joe Germuska
 Height: 6'2"
 Weight: 164 lbs
---
+
 License Plate **L337**5A9
 Make: **Honda**
 Color: **Blue**
 Owner: Dartey Henv
 Height: 6'1"
 Weight: 204 lbs
---
+
 License Plate **L337**WR9
 Make: **Honda**
 Color: **Blue**
@@ -164,25 +164,21 @@ Color: **Blue**
 Owner: Erika Owens
 **Height: 6**'5"
 Weight: 220 lbs
---
---
-License Plate **L337**539
-Make: **Honda**
---
+
 License Plate **L337**DV9
 Make: **Honda**
 Color: **Blue**
 Owner: Joe Germuska
 **Height: 6**'2"
 Weight: 164 lbs
---
+
 License Plate **L337**5A9
 Make: **Honda**
 Color: **Blue**
 Owner: Dartey Henv
 **Height: 6**'1"
 Weight: 204 lbs
---
+
 License Plate **L337**WR9
 Make: **Honda**
 Color: **Blue**
