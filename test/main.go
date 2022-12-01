@@ -2,6 +2,6 @@ package main
 
 import "piscine"
 
-func main() {
+func main() { 
 	piscine.PrintComb2()
 }
