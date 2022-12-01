@@ -10,7 +10,8 @@ func PrintComb() {
 					z01.PrintRune(rune(48 + i))
 					z01.PrintRune(rune(48 + j))
 					z01.PrintRune(rune(48 + k))
-					z01.PrintRune('\n')
+					z01.PrintRune(',')
+					z01.PrintRune(' ')
 				}
 			}
 		}
