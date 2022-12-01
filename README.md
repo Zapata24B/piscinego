@@ -95,3 +95,6 @@ No comment
 [link 1](https://stackoverflow.com/questions/604864/print-a-file-skipping-the-first-x-lines-in-bash)
 [link 2](https://superuser.com/questions/852404/what-does-n-option-in-sed-do)
 
+### THE COMMAND LINE MURDERS
+[Here](resolving.md) is my note about the section
+
