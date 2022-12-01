@@ -12,7 +12,7 @@ func PrintNbr(n int) {
 		z01.PrintRune('0')
 	}
 	for n > 0 {
-		slc = append(slc, n%10)
+		slc = append(slc, n % 10)
 		n = n / 10
 		i++
 	}
