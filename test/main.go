@@ -1,9 +1,10 @@
 package main
 
 import (
-	"piscine"
 	"github.com/01-edu/z01"
+	"piscine"
 )
+
 func main() {
 	piscine.PrintNbr(-123)
 	piscine.PrintNbr(0)
