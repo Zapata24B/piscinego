@@ -7,17 +7,13 @@ func PrintComb() {
 		for j := 0; j <= 9; j++ {
 			for k := 0; k <= 9; k++ {
 				if i != j && i != k && i < j && j < k {
-					if i == 0 && j == 1 && k == 2 {
-						
-					} else {
+					if i != 0 || j != 1 || k != 2 {
 						z01.PrintRune(' ')
 					}
 					z01.PrintRune(rune(48 + i))
 					z01.PrintRune(rune(48 + j))
 					z01.PrintRune(rune(48 + k))
-					if i == 7 && j == 8 && k == 9 {
-
-					} else {
+					if i != 7 || j != 8 || k != 9 {
 						z01.PrintRune(',')
 					}
 				}
