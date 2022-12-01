@@ -222,5 +222,5 @@ cat memberships/Delta_SkyMiles memberships/AAA memberships/Museum_of_Bash_Histor
 +   Dartey Henv is a male because of his name
 
 #   🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩
-#   🚩🚩DARTEY HENV IS THE MURDER🚩🚩
+#   🚩🚩🚩DARTEY HENV IS THE MURDER🚩🚩🚩
 #   🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩
