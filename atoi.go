@@ -9,7 +9,7 @@ func Atoi(s string) int {
 				return 0
 			}
 		}
-		if (s[i] != '-' && s[i] != '+') {
+		if s[i] != '-' && s[i] != '+' {
 			number += (int(rune(s[i])) - 48) * d
 			d = d * 10
 		}
