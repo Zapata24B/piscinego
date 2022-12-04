@@ -9,7 +9,9 @@ func drawQuad(
 	cornerTopLeft rune,
 	cornerBottomRight rune,
 	cornerBottomLeft rune,
+	// Change the name to horizontal edge
 	edgeLine rune,
+	// Change the name to vertical edge
 	edgeColumn rune,
 ) {
 	whiteSpace := rune(' ')
