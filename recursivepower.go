@@ -6,6 +6,6 @@ func RecursivePower(nb int, power int) int {
 	} else if power == 0 {
 		return 1
 	} else {
-		return RecursivePower(nb, power - 1) * nb
+		return RecursivePower(nb, power-1) * nb
 	}
 }
