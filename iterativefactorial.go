@@ -5,10 +5,6 @@ func IterativeFactorial(nb int) int {
 		var result int64 = 1
 		for i := nb; i >= 1; i-- {
 			result *= int64(i)
-			if result > 2147483647 {
-				result = 0
-				break
-			}
 		}
 		return int(result)
 	} else if nb == 0 || nb == 1 {
