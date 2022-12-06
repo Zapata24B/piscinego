@@ -5,21 +5,23 @@ import (
 )
 
 func PrintNbrBase(nbr int, base string) {
-	isValid := true
 	baseLen := len(base)
-	if baseLen <= 1 {
-		isValid = false
-		z01.PrintRune('N')
-		z01.PrintRune('V')
-	}
+	occurence := 0
 	for i := 0; i < baseLen-1; i++ {
-		if base[i] == base[i+1] {
-			isValid = false
-			z01.PrintRune('N')
-			z01.PrintRune('V')
+		occurence = 0
+		for j := 0; j < baseLen; j++ {
+			if base[i] == base[j] {
+				occurence += 1
+			}
+		}
+		if occurence >= 2 {
+			break
 		}
 	}
-	if isValid {
+	if baseLen <= 1 || occurence >= 2 {
+		z01.PrintRune('N')
+		z01.PrintRune('V')
+	} else {
 		numbers := ""
 		isNegative := false
 		if nbr < 0 {
