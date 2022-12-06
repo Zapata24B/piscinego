@@ -4,24 +4,36 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func isSafePosition(lastPosition, testedPosition int, queenPosition [8]int) bool {
-	for i := 0; i < lastPosition; i++ {
+func isSafePosition(numberQueen, testedPosition int, queenPosition [8]int) bool {
+	for i := 0; i < numberQueen; i++ {
 		position := queenPosition[i]
-		if position == testedPosition || position == testedPosition-(lastPosition-i) || position == testedPosition+(lastPosition-i) {
+		// if the testedPosition is already taken return false
+		// you attempt to place a queen on the same column of an another
+		if position == testedPosition {
+			return false
+		}
+		// if the testedPosition is already taken return false
+		// you attempt to place a queen on the same diagonal rise of an another
+		if position == testedPosition - numberQueen + i {
+			return false
+		}
+		// if the testedPosition is already taken return false
+		// you attempt to place a queen on the same diagonal fall of an another
+		if position == testedPosition + numberQueen - i  {
 			return false
 		}
 	}
 	return true
 }
 
-func solve(indexPosition int, queenPosition [8]int) {
-	if indexPosition == 8 {
+func solve(numberQueen int, queenPosition [8]int) {
+	if numberQueen == 8 {
 		printSolution(queenPosition)
 	} else {
 		for i := 0; i < 8; i++ {
-			if isSafePosition(indexPosition, i, queenPosition) {
-				queenPosition[indexPosition] = i
-				solve(indexPosition+1, queenPosition)
+			if isSafePosition(numberQueen, i, queenPosition) {
+				queenPosition[numberQueen] = i
+				solve(numberQueen+1, queenPosition)
 			}
 		}
 	}
