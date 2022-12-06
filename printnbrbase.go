@@ -9,6 +9,8 @@ func PrintNbrBase(nbr int, base string) {
 	baseLen := len(base)
 	if baseLen <= 1 {
 		isValid = false
+		z01.PrintRune('N')
+		z01.PrintRune('V')
 	}
 	for i := 0; i < baseLen-1; i++ {
 		if base[i] == base[i+1] {
