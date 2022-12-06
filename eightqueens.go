@@ -29,9 +29,9 @@ func solve(indexPosition int, queenPosition [8]int) {
 
 func printSolution(queenPosition [8]int) {
 	for i := 0; i < 8; i++ {
-		z01.PrintRune(rune(queenPosition[i]) + '1')
+		z01.PrintRune(rune(queenPosition[i] + '1'))
 	}
-	z01.PrintRune('\n')
+	z01.PrintRune(rune('\n'))
 }
 
 func EightQueens() {
