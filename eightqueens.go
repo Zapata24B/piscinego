@@ -29,7 +29,7 @@ func solve(indexPosition int, queenPosition [8]int) {
 
 func printSolution(queenPosition [8]int) {
 	for i := 0; i < 8; i++ {
-		z01.PrintRune(rune(queenPosition[i] + 48))
+		z01.PrintRune(rune(queenPosition[i] + 49))
 	}
 	z01.PrintRune(10)
 }
