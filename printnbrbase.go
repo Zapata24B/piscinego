@@ -18,7 +18,7 @@ func PrintNbrBase(nbr int, base string) {
 			break
 		}
 	}
-	if baseLen <= 1 || occurence >= 2 {
+	if baseLen <= 1 || occurence >= 2 || base[0] == '-' || base[0] == '+' {
 		z01.PrintRune('N')
 		z01.PrintRune('V')
 	} else {
