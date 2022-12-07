@@ -23,12 +23,7 @@ func PrintNbrBase(nbr int, base string) {
 			z01.PrintRune('-')
 		}
 		numberLen := len(number)
-		if isMinInt {
-			mod := 8 % baseLen
-			_number := []rune(number)
-			_number[numberLen-1] = rune(base[mod])
-			number = string(_number)
-		}
+		number = handleMint(isMinInt, baseLen, number, numberLen, base)
 		for i := 0; i < numberLen; i++ {
 			z01.PrintRune(rune(number[i]))
 		}
@@ -36,6 +31,16 @@ func PrintNbrBase(nbr int, base string) {
 		z01.PrintRune('N')
 		z01.PrintRune('V')
 	}
+}
+
+func handleMint(isMinInt bool, baseLen int, number string, numberLen int, base string) string {
+	if isMinInt {
+		mod := 8 % baseLen
+		_number := []rune(number)
+		_number[numberLen-1] = rune(base[mod])
+		number = string(_number)
+	}
+	return number
 }
 
 func handleNegative(nbr int, isMinInt bool, isNegative bool) (int, bool, bool) {
