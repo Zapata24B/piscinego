@@ -1,8 +1,6 @@
 package piscine
 
 import (
-	"math"
-
 	"github.com/01-edu/z01"
 )
 
@@ -31,7 +29,7 @@ func PrintNbrBase(nbr int, base string) {
 		isNegative := false
 		isMinInt := false
 		if nbr < 0 {
-			if nbr == math.MinInt64 {
+			if nbr == -9223372036854775808 {
 				isMinInt = true
 				nbr = -(nbr + 1)
 			} else {
