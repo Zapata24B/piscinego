@@ -12,6 +12,9 @@ func PrintNbrBase(nbr int, base string) {
 		for j := 0; j < baseLen; j++ {
 			if base[i] == base[j] {
 				occurence += 1
+				if occurence >= 2 {
+					break
+				}
 			}
 		}
 		if occurence >= 2 {
@@ -28,10 +31,14 @@ func PrintNbrBase(nbr int, base string) {
 			nbr = -nbr
 			isNegative = true
 		}
-		for nbr != 0 {
-			mod := nbr % baseLen
-			numbers += string(base[mod])
-			nbr = nbr / baseLen
+		if nbr > 0 {
+			for nbr != 0 {
+				mod := nbr % baseLen
+				numbers += string(base[mod])
+				nbr = nbr / baseLen
+			}	
+		} else {
+			numbers = string(base[0])
 		}
 		numbers = StrRev(numbers)
 		if isNegative {
