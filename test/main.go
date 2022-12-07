@@ -1,32 +1,12 @@
-
-
 package main
 
 import (
-	"github.com/01-edu/z01"
-
+	"fmt"
 	"piscine"
 )
 
 func main() {
-	// piscine.PrintNbrBase(125, "0123456789")
-	// z01.PrintRune('\n')
-	// piscine.PrintNbrBase(-125, "01")
-	// z01.PrintRune('\n')
-	// piscine.PrintNbrBase(125, "0123456789ABCDEF")
-	// z01.PrintRune('\n')
-	// piscine.PrintNbrBase(-125, "choumi")
-	// z01.PrintRune('\n')
-	// piscine.PrintNbrBase(125, "aa")
-	// z01.PrintRune('\n')
-	// piscine.PrintNbrBase(150, "abcdefghijklmnopqrstuvwxyz")
-	// z01.PrintRune('\n')
-	// piscine.PrintNbrBase(0, "&#%")
-	// z01.PrintRune('\n')
-	// piscine.PrintNbrBase(1, "&#%")
-	// z01.PrintRune('\n')
-	// piscine.PrintNbrBase(2, "&#%")
-	// z01.PrintRune('\n')
-	piscine.PrintNbrBase(-9223372036854775808, "0123456789")
-	z01.PrintRune('\n')
+	fmt.Println(piscine.Index("Hello!", "l"))
+	fmt.Println(piscine.Index("Salut!", "alu"))
+	fmt.Println(piscine.Index("Ola!", "hOl"))
 }
