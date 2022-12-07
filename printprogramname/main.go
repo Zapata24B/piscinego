@@ -2,7 +2,7 @@ package main
 
 import (
 	"os"
-	"piscine"
+	"github.com/01-edu/z01"
 )
 
 func main() {
@@ -14,5 +14,8 @@ func main() {
 			break
 		}
 	}
-	piscine.PrintStr(fileName + ("\n"))
+	for i := 0; i < len(fileName); i++ {
+		z01.PrintRune(rune(fileName[i]))
+	}
+	z01.PrintRune(rune('\n'))
 }
