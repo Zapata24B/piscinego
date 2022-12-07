@@ -13,7 +13,7 @@ func AtoiBase(s string, base string) int {
 		numberLen := len(s)
 		for i := numberLen - 1; i >= 0; i-- {
 			number += Index(base, string(s[i])) * factor
-			if !isNegative && number <= 0 {
+			if !isNegative && number < 0 {
 				number = -(number + 1)
 			}
 			factor *= baseLen
