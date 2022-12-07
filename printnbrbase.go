@@ -36,7 +36,7 @@ func PrintNbrBase(nbr int, base string) {
 				mod := nbr % baseLen
 				numbers += string(base[mod])
 				nbr = nbr / baseLen
-			}	
+			}
 		} else {
 			numbers = string(base[0])
 		}
