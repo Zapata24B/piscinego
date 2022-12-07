@@ -23,7 +23,7 @@ func main() {
 		insertValue := firstArg[startInsert:]
 		lastArg := args[len(args)-1]
 		nextArg := args[1]
-		result := insertTask(insertValue, lastArg)
+		result := insertTask(lastArg, insertValue)
 		if nextArg == "-o" || nextArg == "--order" {
 			result = orderTask(result)
 		}
