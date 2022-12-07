@@ -15,5 +15,5 @@ func main() {
 			break
 		}
 	}
-	piscine.PrintStr(fileName+("\n"))
+	piscine.PrintStr(fileName + ("\n"))
 }
