@@ -31,11 +31,11 @@ func PrintNbrBase(nbr int, base string) {
 			nbr = -nbr
 			isNegative = true
 		}
-		if nbr != 0 {
+		if nbr > 0 {
 			for nbr != 0 {
 				mod := nbr % baseLen
 				numbers += string(base[mod])
-				nbr = nbr / baseLen
+				nbr /= baseLen
 			}
 		} else {
 			numbers = string(base[0])
