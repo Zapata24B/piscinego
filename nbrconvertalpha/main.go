@@ -9,14 +9,13 @@ import (
 func main() {
 	arguments := os.Args[1:]
 	isUpper := false
-	for _, v := range arguments {
-		if v == "--upper" {
-			isUpper = true
-		}
+	if arguments[0] == "--upper" {
+		isUpper = true
+		arguments = arguments[1:]
 	}
 	for _, arg := range arguments {
 		number := 0
-		number = miniAtoi(arg, number)
+		number = basicAtoi(arg)
 		if number >= 1 && number <= 26 {
 			if !isUpper {
 				z01.PrintRune(rune(number + 96))
@@ -30,9 +29,12 @@ func main() {
 	z01.PrintRune('\n')
 }
 
-func miniAtoi(arg string, number int) int {
-	for _, v := range arg {
-		number = number*10 + int(v-'0')
+func basicAtoi(str string) int {
+	number := 0
+	factor := 1
+	for i := len(str) - 1; i >= 0; i-- {
+		number += (int(rune(str[i])) - 48) * factor
+		factor = factor * 10
 	}
 	return number
 }
