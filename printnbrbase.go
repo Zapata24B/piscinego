@@ -1,6 +1,8 @@
 package piscine
 
 import (
+	"math"
+
 	"github.com/01-edu/z01"
 )
 
@@ -27,11 +29,17 @@ func PrintNbrBase(nbr int, base string) {
 	} else {
 		numbers := ""
 		isNegative := false
+		isMinInt := false
 		if nbr < 0 {
-			nbr = -nbr
+			if nbr == math.MinInt64 {
+				isMinInt = true
+				nbr = -(nbr + 1)
+			} else {
+				nbr = -nbr
+			}
 			isNegative = true
 		}
-		if nbr > 0 {
+		if nbr != 0 {
 			for nbr != 0 {
 				mod := nbr % baseLen
 				numbers += string(base[mod])
@@ -45,6 +53,12 @@ func PrintNbrBase(nbr int, base string) {
 			z01.PrintRune('-')
 		}
 		numbersLen := len(numbers)
+		if isMinInt {
+			mod := 8 % baseLen
+			_numbers := []rune(numbers)
+			_numbers[numbersLen-1] = rune(base[mod])
+			numbers = string(_numbers)
+		}
 		for i := 0; i < numbersLen; i++ {
 			z01.PrintRune(rune(numbers[i]))
 		}
