@@ -20,22 +20,11 @@ func main() {
 		if firstArg[:3] == "-i=" {
 			startInsert = 3
 		}
-		i := 1
 		insertValue := firstArg[startInsert:]
 		lastArg := args[len(args)-1]
 		nextArg := args[1]
-		for i < numberArgs-1 && (nextArg[:2] == "-i" || nextArg[:3] == "--i") {
-			startInsert = 9
-			if nextArg[:3] == "-i=" {
-				startInsert = 3
-			}
-			_insertValue := nextArg[startInsert:]
-			insertValue += _insertValue
-			i++
-			nextArg = args[i]
-		}
 		result := insertTask(insertValue, lastArg)
-		if nextArg == "-o" || nextArg[:7] == "--order" {
+		if nextArg == "-o" || nextArg == "--order" {
 			result = orderTask(result)
 		}
 		fmt.Println(result)
