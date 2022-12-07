@@ -8,38 +8,17 @@ import (
 
 func main() {
 	arguments := os.Args[1:]
-
-	// Sort numerical args only
 	for i := range arguments {
-		runes := []rune(arguments[i])
-		j := 0
-		if runes[j] >= '0' && runes[j] <= '9' {
-			for _, j := range arguments[i] {
-				z01.PrintRune(j)
-				z01.PrintRune('\n')
+		for j := range arguments {
+			if arguments[i] < arguments[j] {
+				arguments[i], arguments[j] = arguments[j], arguments[i]
 			}
 		}
 	}
-	// Sort uppercase args only
-	for i := range arguments {
-		runes := []rune(arguments[i])
-		j := 0
-		if runes[j] >= 'A' && runes[j] <= 'Z' {
-			for _, j := range arguments[i] {
-				z01.PrintRune(j)
-				z01.PrintRune('\n')
-			}
+	for _, arg := range arguments {
+		for _, a := range arg {
+			z01.PrintRune(a)
 		}
-	}
-	// Sort lowercase args only
-	for i := range arguments {
-		runes := []rune(arguments[i])
-		j := 0
-		if runes[j] >= 'a' && runes[j] <= 'z' {
-			for _, j := range arguments[i] {
-				z01.PrintRune(j)
-				z01.PrintRune('\n')
-			}
-		}
+		z01.PrintRune('\n')
 	}
 }
