@@ -34,9 +34,8 @@ func main() {
 		for i := 0; i < len(result); i++ {
 			z01.PrintRune(rune(result[i]))
 		}
-	} else {
-		z01.PrintRune('\n')
 	}
+	z01.PrintRune('\n')
 }
 
 func check(x rune) bool {
