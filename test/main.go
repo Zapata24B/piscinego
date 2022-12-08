@@ -6,10 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println(piscine.AtoiBase("bba", "abc"))
-	fmt.Println(piscine.AtoiBase("9223372036854775808", "0123456789"))
-	fmt.Println(piscine.AtoiBase("-1111101", "01"))
-	fmt.Println(piscine.AtoiBase("7D", "0123456789ABCDEF"))
-	fmt.Println(piscine.AtoiBase("uoi", "choumi"))
-	fmt.Println(piscine.AtoiBase("bbbbbab", "-ab"))
+	result := piscine.ConvertBase("101011", "01", "0123456789")
+	fmt.Println(result)
 }
