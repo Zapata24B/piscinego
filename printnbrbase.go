@@ -5,26 +5,8 @@ import "github.com/01-edu/z01"
 func PrintNbrBase(nbr int, base string) {
 	baseLen := len(base)
 	if ValidateBase(baseLen, base) {
-		number := ""
-		isNegative := false
-		isMinInt := false
-		nbr, isMinInt, isNegative = handleNegative(nbr, isMinInt, isNegative)
-		if nbr != 0 {
-			for nbr != 0 {
-				mod := nbr % baseLen
-				number += string(base[mod])
-				nbr /= baseLen
-			}
-		} else {
-			number = string(base[0])
-		}
-		number = StrRev(number)
-		if isNegative {
-			z01.PrintRune('-')
-		}
-		numberLen := len(number)
-		number = handleMint(isMinInt, baseLen, number, numberLen, base)
-		for i := 0; i < numberLen; i++ {
+		number := NbrBase(nbr, base)
+		for i := 0; i < len(number); i++ {
 			z01.PrintRune(rune(number[i]))
 		}
 	} else {
@@ -33,7 +15,31 @@ func PrintNbrBase(nbr int, base string) {
 	}
 }
 
-func handleMint(isMinInt bool, baseLen int, number string, numberLen int, base string) string {
+func NbrBase(nbr int, base string) string {
+	baseLen := len(base)
+	number := ""
+	isNegative := false
+	isMinInt := false
+	nbr, isMinInt, isNegative = HandleNegative(nbr, isMinInt, isNegative)
+	if nbr != 0 {
+		for nbr != 0 {
+			mod := nbr % baseLen
+			number += string(base[mod])
+			nbr /= baseLen
+		}
+	} else {
+		number = string(base[0])
+	}
+	if isNegative {
+		number += "-"
+	}
+	number = StrRev(number)
+	numberLen := len(number)
+	number = HandleMint(isMinInt, baseLen, number, numberLen, base)
+	return number
+}
+
+func HandleMint(isMinInt bool, baseLen int, number string, numberLen int, base string) string {
 	if isMinInt {
 		mod := 8 % baseLen
 		_number := []rune(number)
@@ -43,7 +49,7 @@ func handleMint(isMinInt bool, baseLen int, number string, numberLen int, base s
 	return number
 }
 
-func handleNegative(nbr int, isMinInt bool, isNegative bool) (int, bool, bool) {
+func HandleNegative(nbr int, isMinInt bool, isNegative bool) (int, bool, bool) {
 	if nbr < 0 {
 		if nbr == -9223372036854775808 {
 			isMinInt = true
