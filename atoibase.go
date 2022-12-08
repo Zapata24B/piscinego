@@ -2,7 +2,7 @@ package piscine
 
 func AtoiBase(s string, base string) int {
 	baseLen := len(base)
-	if ValidateBase(baseLen, base) {
+	if ValidateBase(base) {
 		number := 0
 		factor := 1
 		isNegative := false
