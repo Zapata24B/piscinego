@@ -5,7 +5,7 @@ func SplitWhiteSpaces(s string) []string {
 	lastWhiteSpace := 0
 	for i := 0; i < len(s); i++ {
 		if s[i] == ' ' {
-			arr = append(arr, s[lastWhiteSpace:i])
+			arr = append(arr, s[lastWhiteSpace : i+1])
 			lastWhiteSpace = i + 1
 		}
 	}
