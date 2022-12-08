@@ -2,15 +2,16 @@ package piscine
 
 func SplitWhiteSpaces(s string) []string {
 	arr := []string(nil)
-	lastWhiteSpace := 0
+	lastWhiteSpaceIndex := 0
 	for i := 0; i < len(s); i++ {
 		if s[i] == ' ' {
-			arr = append(arr, s[lastWhiteSpace:i])
-			lastWhiteSpace = i + 1
+			if lastWhiteSpaceIndex != i {
+				arr = append(arr, s[lastWhiteSpaceIndex:i])
+			}
+			lastWhiteSpaceIndex = i + 1
 		} else if i == len(s)-1 {
-			arr = append(arr, s[lastWhiteSpace:i+1])
-			lastWhiteSpace = i + 1
-
+			arr = append(arr, s[lastWhiteSpaceIndex:i+1])
+			lastWhiteSpaceIndex = i + 1
 		}
 	}
 	return arr
