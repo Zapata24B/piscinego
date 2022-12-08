@@ -1,9 +1,9 @@
 package piscine
 
 func AppendRange(min, max int) []int {
-	tab := []int{}
+	arr := []int{}
 	for i := min; i < max; i++ {
-		tab = append(tab, i)
+		arr = append(arr, i)
 	}
-	return tab
+	return arr
 }
