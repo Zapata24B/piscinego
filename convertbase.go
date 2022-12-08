@@ -1,5 +1,5 @@
 package piscine
 
 func ConvertBase(nbr, baseFrom, baseTo string) string {
-	return ""
+	return NbrBase(AtoiBase(nbr, baseFrom), baseTo);
 }
