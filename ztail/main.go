@@ -29,7 +29,10 @@ func main() {
 			if i >= 1 {
 				fmt.Printf("\n")
 			}
-			fmt.Printf("==> %v <==\n%v\n", fileName, toPrint)
+			fmt.Printf("==> %v <==\n%v", fileName, toPrint)
+			if i != len(files)-1 {
+				fmt.Printf("\n")
+			}
 		}
 	}
 }
