@@ -9,9 +9,11 @@ func main() {
 	args := os.Args[1:]
 	start := Atoi(args[1])
 	files := args[2:]
+	errors := false
 	for i, fileName := range files {
 		content, err := os.ReadFile(fileName)
 		if err != nil {
+			errors = true
 			fmt.Printf("open %v: no such file or directory\n", fileName)
 			continue
 		}
@@ -22,19 +24,17 @@ func main() {
 		}
 		toPrint = toPrint[_start:]
 		if len(files) == 1 {
-			fmt.Printf("%v\n", toPrint)
+			fmt.Printf("%v", toPrint)
 		} else {
 			if i >= 1 {
 				fmt.Printf("\n")
 			}
 			fmt.Printf("==> %v <==\n%v", fileName, toPrint)
-			// if i != len(files)-1 && fileName != "quest8.txt" {
-			// 	fmt.Printf("\n")
-			// }
 		}
 	}
-	// fmt.Printf("\n")
-	os.Exit(1)
+	if errors {
+		os.Exit(1)
+	}
 }
 
 func Atoi(s string) int {
