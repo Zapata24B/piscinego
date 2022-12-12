@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	errors := 0
 	args := os.Args[1:]
 	// option := args[0]
 	start := Atoi(args[1]) - 1
@@ -13,16 +14,19 @@ func main() {
 	for i, fileName := range files {
 		content, err := os.ReadFile(fileName)
 		if err != nil {
-			fmt.Printf("open %v: no such file or directory\n", fileName)
+			fmt.Printf("open %v: no such file or directory", fileName)
+			if i != len(files)-1 {
+				fmt.Printf("\n")
+			}
+			errors++
 			continue
 		}
 		toPrint := string(content)
-		if len(toPrint)-start < 0 {
-			start = 0
-		} else {
-			start = len(toPrint) - start
+		_start := 0
+		if len(toPrint)-start > 0 {
+			_start = len(toPrint) - start
 		}
-		toPrint = toPrint[start:]
+		toPrint = toPrint[_start:]
 		if len(files) == 1 {
 			fmt.Printf("%v\n", toPrint)
 		} else {
@@ -35,6 +39,8 @@ func main() {
 			}
 		}
 	}
+	fmt.Printf("\n")
+	os.Exit(errors)
 }
 
 func Atoi(s string) int {
