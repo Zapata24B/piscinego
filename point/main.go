@@ -29,6 +29,7 @@ func main() {
 	getNumber(points.x)
 	printStr(str)
 	getNumber(points.y)
+	printStr("\n")
 }
 
 func getNumber(r int) {
