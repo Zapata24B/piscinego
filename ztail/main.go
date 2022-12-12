@@ -38,7 +38,7 @@ func main() {
 			// }
 		}
 	}
-	fmt.Printf("\n")
+	// fmt.Printf("\n")
 	os.Exit(errors)
 }
 
