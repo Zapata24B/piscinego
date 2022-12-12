@@ -17,7 +17,12 @@ func main() {
 			continue
 		}
 		toPrint := string(content)
-		toPrint = toPrint[len(toPrint)-start:]
+		if len(toPrint)-start < 0 {
+			start = 0
+		} else {
+			start = len(toPrint) - start
+		}
+		toPrint = toPrint[start:]
 		if len(files) == 1 {
 			fmt.Printf("%v\n", toPrint)
 		} else {
