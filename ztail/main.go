@@ -7,7 +7,7 @@ import (
 
 func main() {
 	args := os.Args[1:]
-	start := Atoi(args[1])
+	start := Atoi(args[1]) + 1
 	files := args[2:]
 	for i, fileName := range files {
 		content, err := os.ReadFile(fileName)
