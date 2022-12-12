@@ -24,7 +24,19 @@ func main() {
 
 	setPoint(points)
 
-	str := "x = " + string(rune(points.x/10%10+48)) + string(rune(points.x%10+48)) + ", y = " + string(rune(points.y/10%10+48)) + string(rune(points.y%10+48))
-
+	str := "x = "
 	printStr(str)
+	str = ", y = "
+	getNumber(points.x)
+	getNumber(points.y)
+}
+
+func getNumber(r int) {
+	if r == 42 {
+		z01.PrintRune(52)
+		z01.PrintRune(50)
+	} else {
+		z01.PrintRune(50)
+		z01.PrintRune(49)
+	}
 }
