@@ -24,7 +24,7 @@ func main() {
 
 	setPoint(points)
 
-	str := "x = 42, y = 21"
+	str := "x = " + string(rune(points.x/10%10+48)) + string(rune(points.x%10+48)) + ", y = " + string(rune(points.y/10%10+48)) + string(rune(points.y%10+48))
 
 	printStr(str)
 }
