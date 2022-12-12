@@ -11,7 +11,6 @@ func printStr(s string) {
 	for _, r := range s {
 		z01.PrintRune(r)
 	}
-	z01.PrintRune('\n')
 }
 
 func setPoint(ptr *point) {
@@ -28,6 +27,7 @@ func main() {
 	printStr(str)
 	str = ", y = "
 	getNumber(points.x)
+	printStr(str)
 	getNumber(points.y)
 }
 
