@@ -25,7 +25,7 @@ func main() {
 		fileName := args[0]
 		content, err := os.ReadFile(fileName)
 		if err != nil {
-			printStr("ERROR: open " + fileName + ": No such file or directory")
+			printStr("ERROR: open " + fileName + ": no such file or directory")
 			z01.PrintRune('\n')
 			os.Exit(1)
 		}
