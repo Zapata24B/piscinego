@@ -21,22 +21,13 @@ func main() {
 		if err != nil {
 			printStr(err.Error())
 		}
-	} else if len(args) == 1 {
-		fileName := args[0]
-		content, err := os.ReadFile(fileName)
-		if err != nil {
-			printStr("ERROR: open " + fileName + ": no such file or directory")
-			z01.PrintRune('\n')
-			os.Exit(1)
-		}
-		printStr(string(content))
 	} else {
 		for _, fileName := range args {
 			content, err := os.ReadFile(fileName)
 			if err != nil {
-				printStr("ERROR: " + fileName + ": No such file or directory")
+				printStr("ERROR: open " + fileName + ": No such file or directory")
 				z01.PrintRune('\n')
-				break
+				os.Exit(1)
 			}
 			printStr(string(content))
 		}
