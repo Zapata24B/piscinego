@@ -8,7 +8,6 @@ import (
 func main() {
 	errors := 0
 	args := os.Args[1:]
-	// option := args[0]
 	start := Atoi(args[1]) - 1
 	files := args[2:]
 	for i, fileName := range files {
