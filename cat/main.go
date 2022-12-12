@@ -27,7 +27,7 @@ func main() {
 		if err != nil {
 			printStr("ERROR: open " + fileName + ": No such file or directory")
 			z01.PrintRune('\n')
-			return
+			os.Exit(1)
 		}
 		printStr(string(content))
 	} else {
