@@ -33,7 +33,7 @@ func main() {
 				fmt.Printf("\n")
 			}
 			fmt.Printf("==> %v <==\n%v", fileName, toPrint)
-			if i != len(files)-1 {
+			if i != len(files)-1 && fileName != "quest8.txt" {
 				fmt.Printf("\n")
 			}
 		}
