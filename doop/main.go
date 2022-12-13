@@ -10,15 +10,15 @@ func main() {
 		operand2, isValid2 := Atoi(args[2])
 		if isValid1 && isValid2 {
 			if operator == "+" {
-				if operand1 != 2147483647 && operand2 != 2147483647 {
+				if operand1 < 2147483647 && operand2 < 2147483647 {
 					PrintNbr(operand1 + operand2)
 				}
 			} else if operator == "-" {
-				if operand1 != -2147483648 && operand2 != -2147483648 {
+				if operand1 > -2147483648 && operand2 > -2147483648 {
 					PrintNbr(operand1 - operand2)
 				}
 			} else if operator == "*" {
-				if operand1 != 2147483647 && operand2 != 2147483647 {
+				if operand1 < 2147483647 && operand2 < 2147483647 {
 					PrintNbr(operand1 * operand2)
 				}
 			} else if operator == "/" {
