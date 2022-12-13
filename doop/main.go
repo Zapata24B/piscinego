@@ -25,13 +25,13 @@ func main() {
 				if operand2 != 0 {
 					PrintNbr(operand1 / operand2)
 				} else {
-					os.Stdout.WriteString("No division by 0")
+					os.Stdout.WriteString("No division by 0\n")
 				}
 			} else if operator == "%" {
 				if operand2 != 0 {
 					PrintNbr(operand1 % operand2)
 				} else {
-					os.Stdout.WriteString("No modulo by 0")
+					os.Stdout.WriteString("No modulo by 0\n")
 				}
 			}
 		}
