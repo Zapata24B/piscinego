@@ -86,4 +86,5 @@ func PrintNbr(n int) {
 			os.Stdout.WriteString(string(rune(48 + slicedNumber[i])))
 		}
 	}
+	os.Stdout.WriteString("\n")
 }
