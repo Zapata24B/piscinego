@@ -54,14 +54,11 @@ func ValidateBase(base string) bool {
 				if base[i] == base[j] {
 					occurrence += 1
 					if occurrence == 2 {
-						break
+						return false
 					}
 				}
 			}
-			if occurrence == 2 {
-				break
-			}
 		}
-		return occurrence != 2
+		return true
 	}
 }

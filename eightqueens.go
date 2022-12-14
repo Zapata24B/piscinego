@@ -13,12 +13,12 @@ func isSafePosition(numberQueen, testedPosition int, queenPosition [8]int) bool 
 			return false
 		}
 		// if the testedPosition is already taken return false
-		// you attempt to place a queen on the same diagonal rise of an another
+		// you attempt to place a queen on the same rise diagonal of an another
 		if position == testedPosition-numberQueen+i {
 			return false
 		}
 		// if the testedPosition is already taken return false
-		// you attempt to place a queen on the same diagonal fall of an another
+		// you attempt to place a queen on the same fall diagonal of an another
 		if position == testedPosition+numberQueen-i {
 			return false
 		}

@@ -16,11 +16,8 @@ func printStr(s string) {
 func main() {
 	args := os.Args[1:]
 	if len(args) == 0 {
-		input, err := io.ReadAll(os.Stdin)
+		input, _ := io.ReadAll(os.Stdin)
 		printStr(string(input))
-		if err != nil {
-			printStr(err.Error())
-		}
 	} else {
 		for _, fileName := range args {
 			content, err := os.ReadFile(fileName)

@@ -7,7 +7,7 @@ func BasicAtoi2(s string) int {
 		if s[i] < '0' || s[i] > '9' {
 			return 0
 		}
-		number += (int(rune(s[i])) - 48) * factor
+		number += (int(s[i]) - 48) * factor
 		factor = factor * 10
 	}
 	return number

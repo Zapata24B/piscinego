@@ -10,7 +10,7 @@ func PrintNbrInOrder(n int) {
 	for n > 0 {
 		mod := n % 10
 		numbers = append(numbers, mod)
-		n = n / 10
+		n /= 10
 	}
 	SortIntegerTable(numbers)
 	for i := 0; i < len(numbers); i++ {
