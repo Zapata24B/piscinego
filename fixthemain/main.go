@@ -4,7 +4,7 @@ import "github.com/01-edu/z01"
 
 const (
 	CLOSE = false
-	OPEN = true
+	OPEN  = true
 )
 
 type Door struct {
