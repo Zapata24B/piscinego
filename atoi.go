@@ -13,7 +13,7 @@ func Atoi(s string) int {
 				factor = factor * 10
 			}
 		}
-			if s[0] == '-' {
+		if s[0] == '-' {
 			return -number
 		}
 	}

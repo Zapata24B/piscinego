@@ -11,7 +11,7 @@ func main() {
 	slice := strings.Split(string(content), "\r\n")
 	lenSlice := len(slice)
 	for i := 0; i < lenSlice/2; i++ {
-		slice[i], slice[lenSlice-i-1] = slice[lenSlice-i-1] ,slice[i]
+		slice[i], slice[lenSlice-i-1] = slice[lenSlice-i-1], slice[i]
 	}
 	file, _ := os.Create("all-paths.txt")
 	for i := 0; i < lenSlice; i++ {

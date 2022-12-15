@@ -1,18 +1,18 @@
 package main
 
-import  (
-    "fmt"
-    "os"
+import (
+	"fmt"
+	"os"
 )
 
 func main() {
 	numArg := len(os.Args)
 	sum := 0
-	if numArg == 2 {	
+	if numArg == 2 {
 		num := BasicAtoi(os.Args[1])
 		for i := num - 1; i > 0; i-- {
 			if IsPrime(i) {
-				sum += i;
+				sum += i
 			}
 		}
 	}
