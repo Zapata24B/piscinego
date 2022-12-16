@@ -2,18 +2,15 @@ package piscine
 
 func Unmatch(a []int) int {
 	for i := range a {
+		isFound := false
 		for j := range a {
-			if i != j {
-				if a[i] == a[j] {
-					break
-				}
-				if j == len(a)-1 {
-					return a[i]
-				}
+			if i != j && a[i] == a[j] {
+				isFound = true
+				break
 			}
-			if j == len(a)-1 {
-				return a[i]
-			}
+		}
+		if !isFound {
+			return a[i]
 		}
 	}
 	return -1
