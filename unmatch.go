@@ -5,7 +5,7 @@ func Unmatch(a []int) int {
 		for j := range a {
 			if i != j && a[i] == a[j] {
 				break
-			} else if j == len(a)-1 {
+			} else if j == len(a)-1 && a[i] != a[j] {
 				return a[i]
 			}
 		}
