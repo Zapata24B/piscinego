@@ -19,7 +19,11 @@ func main() {
 			}
 			runes = append(runes, rune(str[i]))
 		}
-		fmt.Print(string(runes))
+		if runes[len(runes)-1] == ' ' {
+			fmt.Print(string(runes[:len(runes)-1]))
+		} else {
+			fmt.Print(string(runes))
+		}
 	}
 	fmt.Println()
 }
