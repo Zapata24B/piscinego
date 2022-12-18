@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
-	result := piscine.ReverseBits(byte(10))
-	fmt.Printf("%08b", result)
+	fmt.Println(piscine.CountNegative([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}))
+	fmt.Println(piscine.CountNegative([]int{-1, -2, -3, -4, -5, -6, -7, -8, -9, -10}))
+	fmt.Println(piscine.CountNegative([]int{}))
+	fmt.Println(piscine.CountNegative([]int{-1, 2, 0, -3}))
 }
