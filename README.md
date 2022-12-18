@@ -12,5 +12,7 @@
 +   Print Alhpabet
 +   Compare
 +   Rot14
-+   Fprime
++   TabMult
 +   Cleanstr
++   Range
++   Fprime
