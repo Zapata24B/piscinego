@@ -14,22 +14,13 @@ func main() {
 }
 
 func Mirror(s string) string {
+	mirror := "zyxwvutsrqponmlkjihgfedcba"
 	runes := []rune(s)
 	for i, c := range runes {
 		if c >= 'a' && c <= 'z' {
-			shift := 25 - ((c - 97) * 2)
-			if c/2 <= 110 {
-				runes[i] += shift
-			} else {
-				runes[i] -= shift
-			}
+			runes[i] = rune(mirror[int(c)-97])
 		} else if c >= 'A' && c <= 'Z' {
-			shift := 25 - ((c - 65) * 2)
-			if c/2 <= 78 {
-				runes[i] += shift
-			} else {
-				runes[i] -= shift
-			}
+			runes[i] = rune(mirror[int(c)-65]-32)
 		}
 	}
 	return string(runes)
