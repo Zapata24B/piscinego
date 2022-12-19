@@ -6,8 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(piscine.CountNegative([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}))
-	fmt.Println(piscine.CountNegative([]int{-1, -2, -3, -4, -5, -6, -7, -8, -9, -10}))
-	fmt.Println(piscine.CountNegative([]int{}))
-	fmt.Println(piscine.CountNegative([]int{-1, 2, 0, -3}))
+	fmt.Println(piscine.EvenLength([]string{"Hi", "Hola", "Ola", "Ciao", "Salut", "Hallo"}))
 }

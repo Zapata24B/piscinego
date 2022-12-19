@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	lastParam := os.Args[len(os.Args)-1]
+	lastParam := os.Args[1]
 	for _, c := range lastParam {
 		z01.PrintRune(c)
 	}
