@@ -8,10 +8,3 @@
 
 ##  Quest 03
 [Here](docs/quest03.md) is my answers and notes for the quest 3.
-
-+   Print Alhpabet
-+   Compare
-+   Rot14
-+   TabMult
-+   Cleanstr
-+   Range
