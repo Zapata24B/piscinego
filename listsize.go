@@ -7,5 +7,5 @@ func ListSize(l *List) int {
 		count++
 		actual = actual.Next
 	}
-	return count+1
+	return count + 1
 }
