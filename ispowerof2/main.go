@@ -14,7 +14,7 @@ func main() {
 			return
 		}
 		for number != 1 {
-			if number % 2 != 0 {
+			if number%2 != 0 {
 				fmt.Println("false")
 				return
 			}

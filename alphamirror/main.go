@@ -20,7 +20,7 @@ func Mirror(s string) string {
 		if c >= 'a' && c <= 'z' {
 			runes[i] = mirror[int(c)-97]
 		} else if c >= 'A' && c <= 'Z' {
-			runes[i] = mirror[int(c)-65]-32
+			runes[i] = mirror[int(c)-65] - 32
 		}
 	}
 	return string(runes)
