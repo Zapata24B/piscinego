@@ -1,12 +1,12 @@
 package piscine
 
 func ListForEachIf(l *List, f func(*NodeL), condition func(*NodeL) bool) {
-	a := l.Head
-	for a != nil {
-		if condition(a) {
-			f(a)
+	node := l.Head
+	for node != nil {
+		if condition(node) {
+			f(node)
 		}
-		a = a.Next
+		node = node.Next
 	}
 }
 
