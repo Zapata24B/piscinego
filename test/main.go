@@ -6,14 +6,15 @@ import (
 )
 
 func main() {
-	root := &piscine.TreeNode{Data: "4"}
-	piscine.BTreeInsertData(root, "1")
-	piscine.BTreeInsertData(root, "7")
-	piscine.BTreeInsertData(root, "5")
-	node := piscine.BTreeSearchItem(root, "4")
-	fmt.Println("Before delete:")
-	piscine.BTreeApplyInorder(root, fmt.Println)
-	root = piscine.BTreeReplace(root, node, &piscine.TreeNode{Data: "2"})
-	fmt.Println("After delete:")
-	piscine.BTreeApplyInorder(root, fmt.Println)
+	table := []int{1, 2, 3}
+	ac := 93
+	piscine.FoldInt(piscine.Add, table, ac)
+	piscine.FoldInt(piscine.Mul, table, ac)
+	piscine.FoldInt(piscine.Sub, table, ac)
+	fmt.Println()
+
+	table = []int{0}
+	piscine.FoldInt(piscine.Add, table, ac)
+	piscine.FoldInt(piscine.Mul, table, ac)
+	piscine.FoldInt(piscine.Sub, table, ac)
 }
