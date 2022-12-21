@@ -1,58 +1,25 @@
 package piscine
 
-func BTreeTransplant(root, node, newNode *TreeNode) *TreeNode {
+func BTreeTransplant(root, oldNode, newNode *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
 	}
-	oldNode := node
-	if node.Parent == nil {
+	if oldNode.Parent == nil {
 		root = newNode
-	} else if node == node.Parent.Left {
+	} else if oldNode == oldNode.Parent.Left {
 		oldNode.Parent.Left = newNode
 	} else {
 		oldNode.Parent.Right = newNode
 	}
-	newNode.Parent = node.Parent
+	newNode.Parent = oldNode.Parent
 	return root
 }
 
-func BTreeDeleteNode(root, node *TreeNode) *TreeNode {
-	if node == nil {
-		return root
-	}
-	if node.Data < root.Data {
-		root.Left = BTreeDeleteNode(root.Left, node)
-	} else if node.Data > root.Data {
-		root.Right = BTreeDeleteNode(root.Right, node)
-	} else {
-		if root.Left == nil {
-			temp := root.Right
-			root = nil
-			return temp
-		} else if root.Right == nil {
-			temp := root.Left
-			root = nil
-			return temp
-		} else {
-			temp := BTreeMin(root.Right)
-
-			root.Data = temp.Data
-			root.Right = BTreeDeleteNode(root.Right, temp)
-		}
-	}
-	return root
-}
-
-func BTreeInsertNode(root, newNode *TreeNode) *TreeNode {
+func BTreeReplace(root, oldNode, newNode *TreeNode) *TreeNode {
 	if root == nil {
-		return newNode
+		return nil
 	}
-	if newNode.Data < root.Data {
-		root.Left = BTreeInsertNode(root.Left, newNode)
-		root.Left.Parent = root
-	} else if newNode.Data > root.Data {
-		root.Right = BTreeInsertNode(root.Right, newNode)
-		root.Right.Parent = root
-	}
+	root = BTreeDeleteNode(root, oldNode)
+	root = BTreeInsertNode(root, newNode)
 	return root
 }

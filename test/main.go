@@ -5,30 +5,15 @@ import (
 	"piscine"
 )
 
-func PrintList(l *piscine.List) {
-	it := l.Head
-	for it != nil {
-		fmt.Print(it.Data, " -> ")
-		it = it.Next
-	}
-	fmt.Print(nil, "\n")
-}
-
 func main() {
-	link := &piscine.List{}
-	link2 := &piscine.List{}
-
-	piscine.ListPushBack(link, "a")
-	piscine.ListPushBack(link, "b")
-	piscine.ListPushBack(link, "c")
-	piscine.ListPushBack(link, "d")
-	fmt.Println("-----first List------")
-	PrintList(link)
-
-	fmt.Println("-----second List------")
-	PrintList(link2)
-
-	fmt.Println("-----Merged List-----")
-	piscine.ListMerge(link, link2)
-	PrintList(link)
+	root := &piscine.TreeNode{Data: "4"}
+	piscine.BTreeInsertData(root, "1")
+	piscine.BTreeInsertData(root, "7")
+	piscine.BTreeInsertData(root, "5")
+	node := piscine.BTreeSearchItem(root, "4")
+	fmt.Println("Before delete:")
+	piscine.BTreeApplyInorder(root, fmt.Println)
+	root = piscine.BTreeReplace(root, node, &piscine.TreeNode{Data: "2"})
+	fmt.Println("After delete:")
+	piscine.BTreeApplyInorder(root, fmt.Println)
 }
