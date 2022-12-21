@@ -8,11 +8,11 @@ import (
 
 func main() {
 	if len(os.Args) == 2 {
-		arg := os.Args[1]
-		for i, char := range arg {
-			if char == ' ' {
-				word := arg[:i]
-				PrintStr(word)
+		arg := []rune(os.Args[1])
+		for i := len(arg) - 1; i >= 0; i-- {
+			if arg[i] == ' ' {
+				word := arg[i+1:]
+				PrintStr(string(word))
 				break
 			}
 		}

@@ -104,9 +104,6 @@ lastrune/
 lastword/
 lcm/
 leapyear/
-lem-in/
-lem-in/audit/
-linear-stats/
 
 makerange/
 map/
