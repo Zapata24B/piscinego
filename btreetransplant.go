@@ -1,19 +1,19 @@
 package piscine
 
-func BTreeTransplant(root, oldNode, newNode *TreeNode) *TreeNode {
+func BTreeTransplant(root, node, newNode *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
 	}
-	root = BTreeDeleteNode(root, oldNode)
-	root = BTreeInsertNode(root, newNode)
+	oldNode := node
+	if node.Parent == nil {
+		root = newNode
+	} else if node == node.Parent.Left {
+		oldNode.Parent.Left = newNode
+	} else {
+		oldNode.Parent.Right = newNode
+	}
+	newNode.Parent = node.Parent
 	return root
-	// if root.Data == oldNode.Data {
-	// 	return root
-	// } else if root.Data > oldNode.Data {
-	// 	return BTreeTransplant(root.Left, oldNode, newNode)
-	// } else {
-	// 	return BTreeTransplant(root.Right, oldNode, newNode)
-	// }
 }
 
 func BTreeDeleteNode(root, node *TreeNode) *TreeNode {
