@@ -6,5 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println(piscine.Oddlength([]string{"Hi", "Hola", "Ola", "Ciao", "Salut", "Hallo"}))
+	fmt.Println(piscine.Delete([]int{1, 2, 3, 4, 5}, 2))
+	fmt.Println(piscine.Delete([]int{1, 2, 3, 4, 5}, 3))
+	fmt.Println(piscine.Delete([]int{1, 2, 3, 4, 5}, 1))
 }

@@ -1,9 +1,9 @@
 package piscine
 
-func Delete(ints []int, position int) []int {
+func Delete(integers []int, position int) []int {
 	position--
-	if position < 0 || position > len(ints) {
-		return ints
+	if position < 0 || position > len(integers) {
+		return integers
 	}
-	return append(ints[:position], ints[position+1:]...)
+	return append(integers[:position], integers[position+1:]...)
 }

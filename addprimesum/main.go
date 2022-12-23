@@ -24,7 +24,7 @@ func BasicAtoi(s string) int {
 	factor := 1
 	for i := len(s) - 1; i >= 0; i-- {
 		number += (int(s[i]) - 48) * factor
-		factor = factor * 10
+		factor *= 10
 	}
 	return number
 }
