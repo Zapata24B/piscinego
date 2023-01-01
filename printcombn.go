@@ -1,10 +1,8 @@
 package piscine
 
-import "fmt"
-
 func PrintCombN(n int) {
 	out := PrintCombNumber('0', n, "")
-	fmt.Println(out[:len(out)-2])
+	printStr(out[:len(out)-2])
 }
 
 func PrintCombNumber(start rune, n int, accumulator string) string {
