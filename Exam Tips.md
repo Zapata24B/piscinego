@@ -135,3 +135,27 @@ char >= '0' && char <= '9'
 ```go
 char < '0' || char > '9'
 ```
+
+
+#   Bits
+    +   activeBits, BinaryAddition, reverseBit, swapbits
+#   Array
+    +   Sort
+    +   Sum
+#   Ascii
+    +   Is Alpha
+#   Loop
+    +   Count
+#   PrintRune
+    +   Atoi, TrimAtoi, AtoiBase, BasicAtoi, BasicAtoi2
+    +   Itoa
+#   Function
+    +   Function of function
+#   Mathematiques
+    +   base
+    +   gcd
+    +   lcm
+    +   power
+    +   median
+    +   negative
+    +   prime

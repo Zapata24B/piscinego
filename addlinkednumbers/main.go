@@ -12,9 +12,7 @@ type NodeAddL struct {
 func AddLinkedNumbers(num1, num2 *NodeAddL) *NodeAddL {
 	result := &NodeAddL{Num: num1.Num + num2.Num}
 	prev, head := result, result
-	for current1, current2 := num1.Next, num2.Next;
-		current1 != nil && current2 != nil;
-		current1, current2 = current1.Next, current2.Next {
+	for current1, current2 := num1.Next, num2.Next; current1 != nil && current2 != nil; current1, current2 = current1.Next, current2.Next {
 		add := current1.Num + current2.Num
 		if add <= 9 {
 			result.Next = &NodeAddL{Num: add}

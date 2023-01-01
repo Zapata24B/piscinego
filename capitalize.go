@@ -17,6 +17,7 @@ func Capitalize(s string) string {
 	}
 	return string(runes)
 }
+
 func isLetter(s rune) bool {
 	return (s >= 'a' && s <= 'z') || (s >= 'A' && s <= 'Z')
 }

@@ -1,12 +1,9 @@
 package main
 
-import (
-	"fmt"
-	"piscine"
-)
+import "piscine"
 
 func main() {
-	fmt.Println(piscine.Delete([]int{1, 2, 3, 4, 5}, 2))
-	fmt.Println(piscine.Delete([]int{1, 2, 3, 4, 5}, 3))
-	fmt.Println(piscine.Delete([]int{1, 2, 3, 4, 5}, 1))
+	// piscine.PrintCombN(1)
+	piscine.PrintCombN(4)
+	// piscine.PrintCombN(9)
 }

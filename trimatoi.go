@@ -1,7 +1,7 @@
 package piscine
 
 func TrimAtoi(s string) int {
-	numbers, isNegative := Itoa(s)
+	numbers, isNegative := parseStringToRune(s)
 	n := Atoi(string(numbers))
 	if isNegative {
 		return -n
@@ -9,7 +9,7 @@ func TrimAtoi(s string) int {
 	return n
 }
 
-func Itoa(s string) ([]rune, bool) {
+func parseStringToRune(s string) ([]rune, bool) {
 	numbers := []rune{}
 	isNegative := false
 	firstDigit := false
