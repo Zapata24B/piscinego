@@ -1,9 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"strconv"
+
+	"github.com/01-edu/z01"
 )
 
 type roman struct {
@@ -17,7 +18,7 @@ func main() {
 
 	// Write the error message in case of an invalid number
 	if err != nil || nbr >= 4000 || nbr == 0 {
-		fmt.Println("ERROR: cannot convert to roman digit")
+		printStr("ERROR: cannot convert to roman digit")
 		return
 	}
 
@@ -81,7 +82,14 @@ func main() {
 	sumRoman := Join(chars, "+")
 
 	// Print the Roman numeral and the calculation used to obtain it
-	fmt.Printf("%s\n%s\n", sumRoman, roman)
+	printStr(sumRoman + "\n" + roman)
+}
+
+func printStr(str string) {
+	for _, char := range str {
+		z01.PrintRune(char)
+	}
+	z01.PrintRune('\n')
 }
 
 func Join(arrString []string, sep string) string {
