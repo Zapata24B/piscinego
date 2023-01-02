@@ -8,14 +8,14 @@ import (
 
 func main() {
 	if len(os.Args) == 3 {
-		min, err := strconv.Atoi(os.Args[1])
+		min, err := strconv.Atoi(os.Args[2])
 		if err != nil {
-			fmt.Println(err)
+			fmt.Println(err.Error())
 			return
 		}
-		max, _err := strconv.Atoi(os.Args[2])
+		max, _err := strconv.Atoi(os.Args[1])
 		if _err != nil {
-			fmt.Println(_err)
+			fmt.Println(_err.Error())
 			return
 		}
 		for i := min; ; {
