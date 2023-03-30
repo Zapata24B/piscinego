@@ -1,4 +1,4 @@
-#   All my answers & notes at ZONE01 DAKAR 2nd Piscine
+#   💦All my answers & notes at ZONE01 DAKAR 2nd Piscine
 
 ##  Quest 01
 [Here](docs/quest01.md) is my answers and notes for the quest 1.
