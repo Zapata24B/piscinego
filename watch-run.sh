@@ -1,39 +1,36 @@
 #!/bin/bash
 
-# Function to execute the command
+# Define the function to run a command
 run_command() {
-    echo "Running command: $@"
-    "$@" &
-
-    # Sleep for a short time to allow the program to start
-    sleep 2
-
-    # Get the PID of the running Go server process
-    PID=$(ps aux | grep "/tmp/go" | grep -v grep | awk '{print $2}')
-    echo "Command PID: $PID"
+    echo "Running command: $@"  # Print the command being executed
+    "$@" &                     # Execute the command in the background
+    sleep 2                    # Sleep for a short interval to allow the command to start
+    PID=$(ps aux | grep "/tmp/go" | grep -v grep | awk '{print $2}')  # Find the process ID of the command
+    echo "Command PID: $PID"   # Print the process ID of the command
 }
 
-# Check if an argument is provided
-if [ $# -eq 1 ]; then
-    # Use the argument for the command
-    COMMAND=$1
+# Check if a command is provided as an argument
+if [[ -n "$1" ]]; then
+    COMMAND=$1  # Use the provided command
 else
-    # Use the default command
-    COMMAND="go run ."
+    COMMAND="go run ."  # Default command to run Go files in the current directory
 fi
 
-# Directory to monitor for file changes
-DIRECTORY="./"
+DIRECTORY="./"  # Set the directory to monitor for file changes
 
-# Run the initial command
-run_command $COMMAND
+run_command $COMMAND  # Initial command execution
 
-# Monitor the directory for file changes
+LAST_RUN_TIME=$(date +%T)  # Set the initial last run time
+
 while true; do
-    # Wait for a file change event
-    inotifywait -r -e modify,create,delete $DIRECTORY
+    CHANGED_FILES=$(find . -type f -newermt "$LAST_RUN_TIME" 2>/dev/null)  # Find files changed since the last run time
 
-    # File change detected, kill previous command and run a new one
-    kill -9 "$PID"
-    run_command $COMMAND
+    if [[ -n "$CHANGED_FILES" ]]; then
+        echo "Detected file changes. Stopping previous command..."
+        kill -9 $PID 2>/dev/null  # Stop the previous command by killing its process
+        run_command $COMMAND  # Run the new command
+    fi
+
+    LAST_RUN_TIME=$(date +%T)  # Update the last run time
+    sleep 1  # Sleep for a short interval before checking for file changes again
 done
