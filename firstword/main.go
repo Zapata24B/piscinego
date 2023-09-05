@@ -7,15 +7,26 @@ import (
 )
 
 func main() {
-	if len(os.Args) == 2 {
-		arg := os.Args[1]
-		for i, char := range arg {
-			if char == ' ' {
-				word := arg[:i]
-				PrintStr(word)
+	if len(os.Args) != 2 {
+		return
+	}
+	input := os.Args[1]
+
+	firstWord := ""
+	inWord := false
+
+	for _, char := range input {
+		if char == ' ' {
+			if inWord {
 				break
 			}
+		} else {
+			firstWord += string(char)
+			inWord = true
 		}
+	}
+	if firstWord != "" {
+		PrintStr(firstWord)
 	}
 }
 
