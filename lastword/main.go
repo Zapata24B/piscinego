@@ -7,16 +7,41 @@ import (
 )
 
 func main() {
-	if len(os.Args) == 2 {
-		arg := []rune(os.Args[1])
-		for i := len(arg) - 1; i >= 0; i-- {
-			if arg[i] == ' ' {
-				word := arg[i+1:]
-				PrintStr(string(word))
-				break
+	if len(os.Args) != 2 {
+		return
+	}
+
+	input := os.Args[1]
+	words := splitWords(input)
+
+	if len(words) > 0 {
+		lastWord := words[len(words)-1]
+		PrintStr(lastWord)
+	}
+}
+
+func splitWords(input string) []string {
+	var words []string
+	start := -1
+
+	for i, char := range input {
+		if char == ' ' {
+			if start != -1 {
+				words = append(words, input[start:i])
+				start = -1
+			}
+		} else {
+			if start == -1 {
+				start = i
 			}
 		}
 	}
+
+	if start != -1 {
+		words = append(words, input[start:])
+	}
+
+	return words
 }
 
 func PrintStr(s string) {
