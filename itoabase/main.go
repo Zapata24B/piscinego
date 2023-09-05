@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 func ItoaBase(value, base int) string {
@@ -27,8 +28,40 @@ func ItoaBase(value, base int) string {
 }
 
 func main() {
-	value := -42
-	base := 16
-	result := ItoaBase(value, base)
-	fmt.Printf("%d in base %d is %s\n", value, base, result)
+	if len(os.Args) == 3 {
+
+		valueStr := os.Args[1]
+		baseStr := os.Args[2]
+
+		value := Atoi(valueStr)
+
+		base := Atoi(baseStr)
+		if base < 2 || base > 16 {
+			fmt.Println("Invalid base. Must be between 2 and 16.")
+			return
+		}
+
+		result := ItoaBase(value, base)
+		fmt.Println(result)
+	}
+}
+
+func Atoi(s string) int {
+	number := 0
+	if len(s) > 0 {
+		factor := 1
+		for i := len(s) - 1; i >= 0; i-- {
+			if (s[i] < '0' || s[i] > '9') && (i != 0 || (s[0] != '-' && s[0] != '+')) {
+				return 0
+			}
+			if s[i] != '-' && s[i] != '+' {
+				number += (int(s[i]) - 48) * factor
+				factor = factor * 10
+			}
+		}
+		if s[0] == '-' {
+			return -number
+		}
+	}
+	return number
 }
